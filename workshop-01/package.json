@@ -1,0 +1,27 @@
+{
+  "name": "workshop-01",
+  "version": "1.0.0",
+  "description": "Deploy your first ERC-20 token",
+  "main": "deploy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web3",
+    "philippines",
+    "workshop",
+    "polygon",
+    "manila",
+    "thirdweb",
+    "community"
+  ],
+  "author": "Waren Gonzaga",
+  "license": "MIT",
+  "dependencies": {
+    "@thirdweb-dev/sdk": "^2.3.7",
+    "dotenv": "^16.0.1",
+    "ethers": "^5.6.8",
+    "yarn": "^1.22.18"
+  },
+  "packageManager": "yarn@3.2.1"
+}
