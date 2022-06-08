@@ -1269,9 +1269,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"workshop-01@workspace:.":
+"workshop-1@workspace:.":
   version: 0.0.0-use.local
-  resolution: "workshop-01@workspace:."
+  resolution: "workshop-1@workspace:."
   dependencies:
     "@thirdweb-dev/sdk": ^2.3.7
     dotenv: ^16.0.1
@@ -1296,12 +1296,12 @@ __metadata:
   linkType: hard
 
 "yarn@npm:^1.22.18":
-  version: 1.22.18
-  resolution: "yarn@npm:1.22.18"
+  version: 1.22.19
+  resolution: "yarn@npm:1.22.19"
   bin:
     yarn: bin/yarn.js
     yarnpkg: bin/yarn.js
-  checksum: ffd9a4872caa5fce83e914592dd6a40bb978bf992d3dca839bc3853b9e6de951d7596f7e8c4a88bec3af3a049e46097f9139a51740d9074582fd923af8762f7a
+  checksum: b43d2cc5fee7e933beb12a8aee7dfceca9e9ef2dd17c5d04d15a12ab7bec5f5744ea34a07b86e013da7f291a18c4e1ad8f70e150f5ed2f4666e6723c7f0a8452
   languageName: node
   linkType: hard
 
