@@ -21,7 +21,6 @@ const Create: NextPage = () => {
     marketplaceAddress.contract
   );
 
-  // This function gets called when the form is submitted.
   async function handleCreateListing(e: any) {
     
     setClickable(false);
@@ -33,13 +32,10 @@ const Create: NextPage = () => {
         return;
       }
 
-      // Prevent page from refreshing
       e.preventDefault();
 
-      // Store the result of either the direct listing creation or the auction listing creation
       let transactionResult: undefined | TransactionResult = undefined;
 
-      // De-construct data from form submission
       const { contractAddress, tokenId, price } =
         e.target.elements;
 
@@ -49,7 +45,6 @@ const Create: NextPage = () => {
         price.value
       );
 
-      // If the transaction succeeds, take the user back to the homepage to view their listing!
       if (transactionResult) {
         alert("Successfully listed!");
         router.push(`/`);
@@ -68,13 +63,13 @@ const Create: NextPage = () => {
   ) {
     try {
       const transaction = await marketplace?.direct.createListing({
-        assetContractAddress: contractAddress, // Contract Address of the NFT
-        buyoutPricePerToken: price, // Maximum price, the auction will end immediately if a user pays this price.
-        currencyContractAddress: NATIVE_TOKEN_ADDRESS, // NATIVE_TOKEN_ADDRESS is the crpyto curency that is native to the network. i.e. Rinkeby ETH.
-        listingDurationInSeconds: 60 * 60 * 24 * 7, // When the auction will be closed and no longer accept bids (1 Week)
-        quantity: 1, // How many of the NFTs are being listed (useful for ERC 1155 tokens)
-        startTimestamp: new Date(0), // When the listing will start
-        tokenId: tokenId, // Token ID of the NFT.
+        assetContractAddress: contractAddress,
+        buyoutPricePerToken: price,
+        currencyContractAddress: NATIVE_TOKEN_ADDRESS,
+        listingDurationInSeconds: 60 * 60 * 24 * 7,
+        quantity: 1,
+        startTimestamp: new Date(0),
+        tokenId: tokenId,
       });
 
       return transaction;

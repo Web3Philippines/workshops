@@ -4,35 +4,27 @@ import {
   useNetwork,
   useNetworkMismatch,
   useListing,
+  ChainId,
 } from "@thirdweb-dev/react";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../styles/Home.module.css";
 import marketplaceAddress from "../../config.json";
-import { NodeNextRequest } from "next/dist/server/base-http/node";
 
 const ListingPage: NextPage = () => {
-  // Next JS Router hook to redirect to other pages and to grab the query from the URL (listingId)
   const router = useRouter();
   const [button, setButton] = useState("Purchase");
   const [clickable, setClickable] = useState(true);
-
-  // De-construct listingId out of the router.query.
-  // This means that if the user visits /listing/0 then the listingId will be 0.
-  // If the user visits /listing/1 then the listingId will be 1.
   const { listingId } = router.query as { listingId: string };
 
-  // Hooks to detect user is on the right network and switch them if they are not
   const networkMismatch = useNetworkMismatch();
   const [, switchNetwork] = useNetwork();
 
-  // Initialize the marketplace contract
   const marketplace = useMarketplace(
     marketplaceAddress.contract
   );
 
-  // Fetch the listing from the marketplace contract
   const { data: listing, isLoading: loadingListing } = useListing(
     marketplace,
     listingId
@@ -49,15 +41,13 @@ const ListingPage: NextPage = () => {
   async function buyNft() {
     setClickable(false);
     try {
-      // Ensure user is on the correct network
       if (networkMismatch) {
-        switchNetwork && switchNetwork(4);
+        switchNetwork && switchNetwork(ChainId.Mumbai);
         return;
       }
-      // UX improvements
+
       setButton("Please wait...");
 
-      // Simple one-liner for buying the NFT
       await marketplace?.buyoutListing(listingId, 1);
       alert("NFT purchase successfully!");
       router.push(`/`);

@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       {/* Content */}
       <div className={styles.container}>
         {/* Top Section */}
-        <h1 className={styles.h1}>OpenSee Marketplace 👀</h1>
+        <h1 className={styles.h1}>OpenSee 👀 Marketplace</h1>
         <p className={styles.explain}>
           Build an NFT marketplace using{" "}
           <b>
@@ -53,11 +53,9 @@ const Home: NextPage = () => {
 
         <div className="main">
           {
-            // If the listings are loading, show a loading message
             loadingListings ? (
-              <div>Loading listings...</div>
+              <div>📦 Loading listings...</div>
             ) : (
-              // Otherwise, show the listings
               <div className={styles.listingGrid}>
                 {listings?.map((listing) => (
                   <div
@@ -69,7 +67,6 @@ const Home: NextPage = () => {
                       src={listing.asset.image}
                       style={{
                         borderRadius: 16,
-                        // Fit the image to the container
                         width: "100%",
                         height: "100%",
                       }}
