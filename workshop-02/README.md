@@ -4,6 +4,12 @@
 
 You'll learn how to build your own NFT marketplace on Mumbai (Polygon Testnet) using thirdweb marketplace pre-built contract and Web3 SDK.
 
+## Setup
+
+Edit the `config.json` and add your smart contract address and the preffered network. In this workshop we'll use Mumbai Polygon testnet which has `8001` network ID.
+
+For test NFT to be listed we'll use this pre-made test NFT collection called [Mata NFT](https://thirdweb.com/mumbai/signature-drop/0xD9288b8E10c68D5669d1c70b63C8F2eDC40D1925).
+
 ## Start Server
 
 ```
