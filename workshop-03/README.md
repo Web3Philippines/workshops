@@ -14,7 +14,7 @@ You'll learn how to deploy your own membership NFT on Mumbai (Polygon Testnet) u
 
 ## Setup
 
-Edit the `const/yourDetails.js` and add your smart contract address (Edition Drop / ERC-1155) and the preffered domain name (We'll use `onlybatak.com`). We'll use that domain name as information upon signing. In this workshop we'll use Mumbai Polygon testnet, we recommend to add this testnet via [chainlist.wtf](https://chainlist.wtf).
+Edit the `const/yourDetails.js` and add your smart contract address (Edition Drop / ERC-1155) and the preffered domain name (We'll use `onlybatak.com`). We'll use that domain name as information upon signing. In this workshop we'll use Mumbai Polygon testnet, we recommend to add this testnet using [chainlist.wtf](https://chainlist.wtf) to your wallet.
 
 Create `.env.local` file and place your private key something like this.
 
